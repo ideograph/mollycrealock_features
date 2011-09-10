@@ -6,7 +6,7 @@
 function mollycrealock_imagestyles_imagecache_default_presets() {
   $items = array(
 
-    'lightbox' => array(
+  'lightbox' => array(
       'presetname' => 'lightbox',
       'actions' => array(
         '0' => array(
@@ -21,6 +21,49 @@ function mollycrealock_imagestyles_imagecache_default_presets() {
         ),
       ),
     ),
+    
+    'node_rounded' => array(
+      'presetname' => 'node_rounded',
+      'actions' => array(
+        '0' => array(
+          'weight' => '0',
+          'module' => 'imagecache',
+          'action' => 'imagecache_scale',
+          'data' => array(
+            'width' => '760',
+            'height' => '550',
+            'upscale' => 0,
+          ),
+        ),
+        '1' => array(
+          'weight' => '0',
+          'module' => 'imagecache_canvasactions',
+          'action' => 'canvasactions_roundedcorners',
+          'data' => array(
+            'radius' => '12',
+            'independent_corners_set' => array(
+              'independent_corners' => 0,
+              'radii' => array(
+                'tl' => '',
+                'tr' => '',
+                'bl' => '',
+                'br' => '',
+              ),
+            ),
+            'antialias' => TRUE,
+          ),
+        ),
+        '2' => array(
+          'weight' => '0',
+          'module' => 'imagecache_coloractions',
+          'action' => 'imagecache_convert',
+          'data' => array(
+            'format' => 'image/png',
+          ),
+        ),
+      ),
+    ),
+    
     'thumb_circle' => array(
       'presetname' => 'thumb_circle',
       'actions' => array(
