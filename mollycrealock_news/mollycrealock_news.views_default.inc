@@ -41,7 +41,7 @@ function mollycrealock_news_views_default_views() {
       'empty' => '',
       'hide_empty' => 0,
       'empty_zero' => 0,
-      'link_to_node' => 0,
+      'link_to_node' => 1,
       'exclude' => 0,
       'id' => 'title',
       'table' => 'node',
@@ -89,37 +89,6 @@ function mollycrealock_news_views_default_views() {
       'field' => 'field_newsimage_fid',
       'relationship' => 'none',
     ),
-    'created' => array(
-      'label' => '',
-      'alter' => array(
-        'alter_text' => 0,
-        'text' => '',
-        'make_link' => 0,
-        'path' => '',
-        'link_class' => '',
-        'alt' => '',
-        'prefix' => '',
-        'suffix' => '',
-        'target' => '',
-        'help' => '',
-        'trim' => 0,
-        'max_length' => '',
-        'word_boundary' => 1,
-        'ellipsis' => 1,
-        'html' => 0,
-        'strip_tags' => 0,
-      ),
-      'empty' => '',
-      'hide_empty' => 0,
-      'empty_zero' => 0,
-      'date_format' => 'large',
-      'custom_date_format' => '',
-      'exclude' => 0,
-      'id' => 'created',
-      'table' => 'node',
-      'field' => 'created',
-      'relationship' => 'none',
-    ),
     'body' => array(
       'label' => '',
       'alter' => array(
@@ -150,6 +119,37 @@ function mollycrealock_news_views_default_views() {
       'override' => array(
         'button' => 'Override',
       ),
+      'relationship' => 'none',
+    ),
+    'created' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'date_format' => 'large',
+      'custom_date_format' => '',
+      'exclude' => 1,
+      'id' => 'created',
+      'table' => 'node',
+      'field' => 'created',
       'relationship' => 'none',
     ),
     'edit_node' => array(
@@ -244,6 +244,8 @@ function mollycrealock_news_views_default_views() {
   $handler->override_option('cache', array(
     'type' => 'none',
   ));
+  $handler->override_option('header_format', '2');
+  $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 4);
   $handler->override_option('use_pager', '1');
   $handler->override_option('style_plugin', 'list');
@@ -413,8 +415,6 @@ function mollycrealock_news_views_default_views() {
       'relationship' => 'none',
     ),
   ));
-  $handler->override_option('header_format', '2');
-  $handler->override_option('header_empty', 0);
   $handler->override_option('items_per_page', 1);
   $handler->override_option('attachment_position', 'before');
   $handler->override_option('inherit_arguments', TRUE);
