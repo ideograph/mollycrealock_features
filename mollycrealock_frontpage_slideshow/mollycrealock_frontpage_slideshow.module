@@ -1,3 +1,8 @@
 <?php
 
 include_once('mollycrealock_frontpage_slideshow.features.inc');
+
+
+// function mollycrealock_frontpage_slideshow_galleria(&$vars) {
+//   mollycrealock_galleries_galleria(&$vars);  
+// }
